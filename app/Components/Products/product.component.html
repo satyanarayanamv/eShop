@@ -1,0 +1,13 @@
+<a routerLink="/">Back to Products</a>
+<hr>
+<ul class="cards">
+    <li>
+        <p><strong>{{product.name}}</strong></p>
+        <p>Rating:
+            <rating [(ngModel)]="product.rating" [readonly]="true"></rating>
+        </p>
+        <p class="color-price">Price: {{ product.currency }}{{ product.price }}</p>
+        <button class="btn btn-primary"> Buy Now </button>
+        <button class="btn btn-default"> Add to Cart</button>
+    </li>
+</ul>

@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <search-component searchtype="Products"></search-component>
+        </div>
+    </div>
+    <div class="row">
+        <filter-component></filter-component>
+        <br/>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-12" style="line-height: 2;">
+                    Matching Products: {{productCount}}
+                    <div class="pull-right">
+
+                        <a href="#" style="color: inherit;" data-toggle="tooltip" title="Grid View">
+                            <i [ngClass]="isDetailsView ? 'material-icons md-36 orange600' : 'material-icons md-36'" (click)="toggle(true)">grid_on</i>
+                        </a>
+                        <a href="#" style="color: inherit;" data-toggle="tooltip" title="List View">
+                            <i [ngClass]="!isDetailsView ? 'material-icons md-36 orange600' : 'material-icons md-36'" (click)="toggle(false)">list</i></a>
+                    </div>
+                    <span class="col-md-02"></span>
+                    <div class="pull-right" style="display: inline-flex;">
+                        <span class="col-md-02" style="width:40%">Sort By </span>
+                        <select class="form-control" [(ngModel)]="selectedSortItem.id">
+                            <option *ngFor="let item of sortItems" value ={{item.id}}>
+                                {{item.name}}
+                            </option>
+                        </select>
+                        <div class="col-md-offset-1"></div>
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
+            <div class="row" *ngIf="!isDetailsView">
+                <div class="col-md-12">
+                    <section *ngFor="let product of products | sortBy:selectedSortItem.id" >
+                        <h1 style="cursor: pointer;" (click)="showProduct(product)">{{ product.name }}</h1>
+                        <div>Rating:
+                            <rating [(ngModel)]="product.rating" [readonly]="true" [float]="false"></rating>
+                        </div>
+                        <div>Price: <span class="color-price">{{ product.currency }}{{ product.price }}</span></div>
+                        <br/>
+                        <a style="cursor: pointer;" (click)="addToCart(product.id)">
+                            <i class="material-icons md-48">add_shopping_cart</i>
+                        </a>
+                        <hr>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="products" *ngIf="isDetailsView">
+                        <ul class="cards">
+                            <li *ngFor="let product of products" (click)="showProduct(product)">
+                                <p><strong>{{product.name}}</strong></p>
+                                <p>Rating:
+                                    <rating [(ngModel)]="product.rating" [readonly]="true"></rating>
+                                </p>
+                                <p class="color-price">Price: {{ product.currency }}{{ product.price }}</p>
+                                <a style="cursor: pointer;" (click)="addToCart(product.id)">
+                                    <i class="material-icons md-48 pull-right">add_shopping_cart</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

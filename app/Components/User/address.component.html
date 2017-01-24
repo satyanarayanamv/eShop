@@ -1,0 +1,34 @@
+<div >    
+    <div class="form-group col-xs-6">
+        <label>Street</label>
+        <input type="text" class="form-control">
+        <!--<input type="text" class="form-control" formControlName="street">-->
+        <small [hidden]="adressForm.controls.street.valid" class="text-danger">
+            Street is required
+        </small>
+    </div>
+    <div class="form-group col-xs-6">
+        <label>City</label>
+        <input type="text" class="form-control">
+        <!--<input type="text" class="form-control" formControlName="city">-->
+        <small [hidden]="adressForm.controls.city.valid" class="text-danger">
+            City is required
+        </small>
+    </div>
+    <div class="form-group col-xs-6">
+        <label>Country</label>
+        <input type="text" class="form-control">
+        <!--<input type="text" class="form-control" formControlName="country">-->
+        <small [hidden]="adressForm.controls.country.valid" class="text-danger">
+            Country is required
+        </small>
+    </div>
+    <div class="form-group col-xs-6">
+        <label>Zip Code</label>
+        <input type="text" class="form-control">
+        <!--<input type="text" class="form-control" formControlName="zipcode">-->
+        <small [hidden]="adressForm.controls.zipcode.valid" class="text-danger">
+            Zip Code is required
+        </small>
+    </div>
+</div>

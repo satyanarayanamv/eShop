@@ -1,0 +1,46 @@
+{
+    "name": "angular2-eshop",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+        "lite": "lite-server",
+        "tsc": "tsc",
+        "tsc:w": "tsc -w"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/angular/angular.io/blob/master/LICENSE"
+        }
+    ],
+    "dependencies": {
+        "@angular/common": "~2.2.0",
+        "@angular/compiler": "~2.2.0",
+        "@angular/core": "~2.2.0",
+        "@angular/forms": "~2.2.0",
+        "@angular/http": "~2.2.0",
+        "@angular/platform-browser": "~2.2.0",
+        "@angular/platform-browser-dynamic": "~2.2.0",
+        "@angular/router": "~3.2.0",
+        "@angular/upgrade": "~2.2.0",
+        "angular-in-memory-web-api": "~0.1.15",
+        "core-js": "^2.4.1",
+        "reflect-metadata": "^0.1.8",
+        "rxjs": "^5.0.3",
+        "systemjs": "0.19.39",
+        "zone.js": "^0.7.6",
+        "bootstrap": "3.3.7",
+        "es6-promise": "^3.0.2",
+        "es6-shim": "^0.33.3",
+        "jquery": "^2.2.1",
+        "ng2-bs3-modal": "^0.10.4",
+        "ngx-rating" : "0.0.9"
+    },
+    "devDependencies": {
+        "@types/core-js": "^0.9.34",
+        "@types/node": "^6.0.45",
+        "concurrently": "^3.0.0",
+        "lite-server": "^2.2.2",
+        "typescript": "^2.0.3"
+    }
+}
